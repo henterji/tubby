@@ -1,0 +1,301 @@
+{
+    "btn": {
+        "ok": "确定",
+        "cancel": "取消",
+        "add": "新增",
+        "edit": "编辑",
+        "del": "删除",
+        "batch-add": "批量新增",
+        "batch-edit": "批量编辑",
+        "batch-del": "批量删除",
+        "insert": "插入",
+        "save": "保存",
+        "update": "更新",
+        "revert": "恢复默认值",
+        "submit": "提交",
+        "refresh": "刷新",
+        "search": "搜索",
+        "filter": "筛选",
+        "find": "查找",
+        "query": "查询",
+        "export-csv": "导出 CSV",
+        "more": "更多",
+        "select": "选择",
+        "actions": "操作",
+        "random": "随机生成",
+        "finish": "完成",
+        "import": "导入"
+    },
+    "text": {
+        "name": "名称",
+        "title": "标题",
+        "value": "值",
+        "required": "必填项.",
+        "empty-data": "没有查询到数据.",
+        "editable": "可编辑",
+        "description": "描述",
+        "confirm": "确认",
+        "row-index": "序号",
+        "info": "提示",
+        "alert": "警告",
+        "error": "错误",
+        "pagination-records": "本页共 {{size}} 条记录， 总共 {{total}} 条记录",
+        "password-strength": {
+            "prompt-label": "请输入密码",
+            "weak-label": "弱",
+            "medium-label": "中等",
+            "strong-label": "强"
+        },
+        "browse-file": "选择文件",
+        "from": "从",
+        "to": "到",
+        "back": "返回"
+    },
+    "base": {
+        "title": "系统管理",
+        "error-page": {
+          "404": "404: 页面不存在",
+          "no-permission": "没有权限"
+        },
+        "user": {
+          "title": "用户",
+          "user-name": "登录名",
+          "password": "登录密码",
+          "real-name": "姓名",
+          "gender": "性别",
+          "telephone": "电话",
+          "email": "邮箱",
+          "positions": "职务",
+          "dept-name": "部门",
+          "enabled": "状态",
+          "is-lock": "锁定",
+          "deleted": "该用户已被删除"
+        },
+        "dept": {
+          "detail": "部门信息",
+          "dept-name": "名称",
+          "abbr": "简称",
+          "dept-type": "类型",
+          "dept-pid": "上级部门",
+          "order-num": "显示顺序",
+          "user-count": "人员数量",
+          "organization-name": "部门名称",
+          "user":"用户"
+        },
+        "config": {
+          "name": "参数项名称"
+        },
+        "module": {
+          "label": "模块"
+        },
+        "role": {
+          "role-name": "角色",
+          "grantable": "再授权?",
+          "user-count": "用户数量",
+          "permission-count": "权限数量"
+        },
+        "resource": {
+          "description": "权限资源"
+        },
+        "locales": {
+          "name": "条目",
+          "text": "文本"
+        },
+        "themes": {
+          "title": "主题",
+          "lightness": "浅色",
+          "darkness": "深色"
+        },
+        "welcome": {
+          "title": "欢迎使用",
+          "description": "系统管理应用",
+          "login": "立即登录",
+          "enter": "进入首页"
+        },
+        "login": {
+          "title": "用户登录",
+          "username": "用户名",
+          "password": "密码",
+          "login": "登录"
+        },
+        "logout": "注销",
+        "update-profile": {
+          "title": "更新资料",
+          "real-name-min-length": "密码至少4个字符.",
+          "password-min-length": "密码至少8个字符.",
+          "email-pattern": "不正确的邮箱地址."
+        },
+        "change-password": {
+          "title": "修改密码",
+          "current-password": "当前密码",
+          "new-password": "新密码",
+          "confirm-password": "确认新密码",
+          "password-min-length": "密码至少8个字符.",
+          "password-matching": "密码不匹配"
+        },
+        "home": {
+          "title": "首页",
+          "stats-users": "用户数"
+        },
+        "users-security": "用户及权限",
+        "depts-mgnt": {
+          "title": "部门管理",
+          "depts-picker": "选择部门",
+          "dept-tree": "组织机构树",
+          "dept-chart": "组织机构图"
+        },
+        "users-mgnt": {
+          "title": "用户管理",
+          "users-picker": "选择用户",
+          "unlock": "解锁",
+          "lock": "锁定",
+          "reset-password": "重置密码",
+          "grant-roles": "分配角色",
+          "add-user": "新增用户",
+          "batch-add-users": "批量新增用户",
+          "edit-user": "编辑用户信息",
+          "password-min-length": "密码长度必须多于6个数字或字符"
+        },
+        "permissions-mgnt": {
+          "title": "权限管理",
+          "add-role": "新增角色",
+          "edit-role": "编辑角色",
+          "grant-users": "分配用户",
+          "grant-permissions": "分配权限",
+          "assigned": "已分配用户",
+          "unassigned": "未分配用户"
+        },
+        "logging-monitoring": "日志及监控",
+        "op-log": {
+          "title": "操作日志",
+          "tabPanel-one": "日志",
+          "tabPanel-two": "访问量统计",
+          "department": "部门",
+          "user-name": "用户名",
+          "date": "时间",
+          "to": "至",
+          "reset": "重置",
+          "log-type": "日志类型",
+          "content": "内容",
+          "url":"URL"
+        },
+        "job-log": {
+          "title": "任务日志",
+          "name": "名称",
+          "state":"状态",
+          "startTime":"开始时间",
+          "endTime":"结束时间",
+          "timeOut":"耗时",
+          "hostIp":"IP",
+          "description":"描述",
+          "outputInfo":"输出",
+          "time":"时间",
+          "log":"日志",
+          "chart":"历史任务统计",
+          "endTimeLabel":"至"
+        },
+        "jobs": {
+          "title": "任务管理",
+          "log":"日志",
+          "name":"名称",
+          "description":"描述",
+          "cronExpression":"Cron表达式",
+          "frontRunTime":"最近一次执行时间",
+          "nextRunTime":"下一次执行时间",
+          "state":"状态",
+          "dialog":"任务",
+          "create":"创建",
+          "create-task":"创建任务",
+          "parameter":"没有参数",
+          "class":{
+            "name":"任务类名称",
+            "param":{
+                "list":"参数列表"
+            }
+        },
+        "cronDemo":{
+            "title":"Cron 表达式示例",
+            "demo_1":"每隔5秒执行一次：",
+            "demo_2":"每隔1分钟执行一次：",
+            "demo_3":"每天23点执行一次：",
+            "demo_4":"每月1号凌晨1点执行一次：",
+            "demo_5":"每月最后一天23点执行一次：",
+            "demo_6":"每周星期天凌晨1点执行一次：",
+            "demo_7":"在26分、29分、33分执行一次：",
+            "demo_8":"每天的0点、13点、18点、21点都执行一次："
+        }
+        },
+        "configurations": "系统配置",
+        "config-mgnt": {
+          "title": "系统参数",
+          "": ""
+        },
+        "code-table-mgnt": {
+          "title": "编码表",
+          "code": "代码",
+          "label": "名称",
+          "code-required": "代码不能为空",
+          "label-required": "名称不能为空",
+          "add-code-success": "新增编码项 {{value}} 成功。",
+          "add-code-failed": "新增编码项 {{value}} 失败。",
+          "confirm-del-code-item": "是否确认删除编码项 {{value}} ？",
+          "del-code-item-succcess": "编码项 {{value}} 删除成功。",
+          "del-code-item-failed": "编码项 {{value}} 删除失败。"
+        },
+        "locales-mgnt": {
+          "title": "语言配置",
+          "dlg-edit": "编辑语言配置项"
+        },
+        "tenants": "租户及计费",
+        "tenants-mgnt": {
+          "title": "租户管理",
+          "tenant": "租户",
+          "filterTenantName": "租户名称",
+          "createTime": "创建时间",
+          "addTenants": "新增租户",
+          "editTenants": "编辑租户",
+          "locale": "语言",
+          "enabled": "状态"
+        },
+        "worklist": {
+          "title": "待办列表",
+          "todo": "待办事项",
+          "done": "已办事项",
+          "serial-number": "流水号",
+          "taskDefinitionKey": "类型",
+          "priority": "优先级",
+          "name": "任务",
+          "assignee": "发起人",
+          "createTime": "发起时间",
+          "dueDate": "截至时间",
+          "remianTime": "停留时长(天)",
+          "startTime": "开始时间",
+          "endTime": "结束时间",
+          "durationInMillis": "停留时长(分)"
+        }
+    },
+    "samples": {
+        "person": {
+            "title": "人员管理",
+            "detail": "人员信息",   
+            "name": "姓名",
+            "firstName": "名",
+            "lastName": "姓",
+            "gender": "性别",
+            "female": "女",
+            "male": "男",
+            "unknown": "未知",
+            "email": "电子邮箱",
+            "telephone": "联系电话",
+            "age": "年龄",
+            "birth": "生日",
+            "married": "已婚",
+            "unmarried": "未婚",
+            "grade": "学历",
+            "intro": "介绍",
+            "password": "密码",
+            "confirm": "确认密码",
+            "confirm-password-error": "再确认一遍密码"
+        }
+    }
+}

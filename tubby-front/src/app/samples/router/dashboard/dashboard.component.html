@@ -1,0 +1,9 @@
+<h5 class="text-center">Top Heroes</h5>
+
+<div class="ui-g">
+  <a *ngFor="let hero of heroes" [routerLink]="['../detail', hero.id]" class="ui-g-3">
+    <div class="module hero">
+      {{hero.name}}
+    </div>
+  </a>
+</div>

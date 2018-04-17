@@ -1,0 +1,87 @@
+<nav class="layout-menu-wrapper">
+  <div class="layout-menu-container">
+    <ul class="layout-menu">
+      <li class="nav-item" has-permission role="ROLE_USER">
+        <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/home']"><i class="fa fa-fw fa-home"></i> 
+        <span [translate]="'base.home.title'"></span></a>
+      </li>
+      <li class="divider"></li>
+
+      <li class="nav-item nav-dropdown" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" href="#">
+          <i class="fa fa-fw fa-bars"></i>
+          <span>PrimeNG Samples</span>
+          <i class="fa fa-fw fa-fw fa-angle-down nav-dropdown-icon"></i>
+        </a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/crud']">
+              <i class="fa fa-fw fa-table"></i> <span>CRUD</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/treeview']">
+              <i class="fa fa-fw fa-list"></i> <span>TreeView</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/calendar']">
+              <i class="fa fa-fw fa-calendar"></i> <span>Calendar</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/editor']">
+              <i class="fa fa-fw fa-edit"></i> <span>Editor</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/upload']">
+              <i class="fa fa-fw fa-cloud-upload"></i> <span>Upload</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" href="#">
+          <i class="fa fa-fw fa-bars"></i>
+          <span>Samples</span>
+          <i class="fa fa-fw fa-fw fa-angle-down nav-dropdown-icon"></i>
+        </a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/loading-bar']">
+              <i class="fa fa-fw fa-hourglass-half"></i> <span>Loading bar</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/charts']">
+              <i class="fa fa-fw fa-bar-chart"></i> <span>ECharts</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/widgets']">
+              <i class="fa fa-fw fa-dashboard"></i> <span>Widgets</span> <span class="badge badge-info">NEW</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/maps']">
+              <i class="fa fa-fw fa-map-marker"></i> <span>Maps</span> <span class="badge badge-info">NEW</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/router']">
+              <i class="fa fa-fw fa-random"></i> <span>Router</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/sample/messaging']">
+              <i class="fa fa-fw fa-comments-o"></i> <span>Messaging</span> </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open" has-permission role="ROLE_ADMIN">
+        <a class="nav-link nav-dropdown-toggle" href="#">
+          <i class="fa fa-fw fa-bars"></i>
+          <span>Administration</span>
+          <i class="fa fa-fw fa-fw fa-angle-down nav-dropdown-icon"></i>
+        </a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menuitem" [routerLink]="['/system/users']">
+              <i class="fa fa-fw fa-hourglass-half"></i> <span>Users</span> </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tubby Web</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="shortcut icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" type="text/css" href="/themes/lightness/theme.css" id="theme-css" />
+  <link rel="stylesheet" type="text/css" href="/resources/primeng/primeng.min.css" />
+  <link rel="stylesheet" type="text/css" href="/resources/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="/resources/simple-line-icons/css/simple-line-icons.css" />
+  <link rel="stylesheet" type="text/css" href="/resources/fullcalendar/fullcalendar.min.css" />
+  <link rel="stylesheet" type="text/css" href="/resources/quill/quill.snow.css">
+  <script src="/resources/jquery/jquery.min.js"></script>
+  <script src="/resources/moment/moment.min.js"></script>
+  <script src="/resources/moment/zh-cn.js"></script>
+  <script src="/resources/fullcalendar/fullcalendar.min.js"></script>
+  <script src="/resources/fullcalendar/zh-cn.min.js"></script>
+  <script src="/resources/quill/quill.min.js"></script>
+  <script src="/resources/sockjs/sockjs.js"></script>
+  <script src="/resources/stomp/stomp.min.js"></script>
+  <script src="/resources/chart.js/Chart.bundle.min.js"></script>
+  <script src="/resources/countUp/countUp.min.js"></script>
+  <script src="/resources/mockjs/mock.js"></script>
+
+  <script>
+    window.appConfig = {
+      apiUrl: "http://localhost:9000",
+      messagingUrl: "http://localhost:9090",
+      locale: 'en_US'
+    };
+  </script>
+</head>
+
+<body>
+  <mpt-app></mpt-app>
+</body>
+
+</html>

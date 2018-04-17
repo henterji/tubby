@@ -1,0 +1,13 @@
+<h3 class="page-title">多页切换</h3>
+
+<p-tabView>
+    <p-tabPanel header="Foo" leftIcon="fa-bell-o">
+        <sample-foo></sample-foo>
+    </p-tabPanel>
+    <p-tabPanel header="Bar" [closable]="true">
+        <sample-bar></sample-bar>
+    </p-tabPanel>
+    <p-tabPanel header="Hello" [closable]="true">
+        Hello world!
+    </p-tabPanel>
+</p-tabView>

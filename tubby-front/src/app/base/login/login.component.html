@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="login">
+      <form [formGroup]="loginform" (ngSubmit)="login(loginform.value)">
+        <p-panel [header]="'base.login.title' | translate">
+
+          <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid">
+            <div class="ui-grid-row">
+              <p-messages [(value)]="msgs"></p-messages>
+            </div>
+
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-4" [translate]="'base.login.username'"></div>
+              <div class="ui-grid-col-8">
+                <input pInputText type="text" formControlName="username" [placeholder]="'base.login.username' | translate">
+              </div>
+            </div>
+
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-4" [translate]="'base.login.password'"></div>
+              <div class="ui-grid-col-8">
+                <input pInputText type="password" formControlName="password" [placeholder]="'base.login.password' | translate">
+              </div>
+            </div>
+
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-4"></div>
+              <div class="ui-grid-col-8">
+                <button pButton type="submit" [label]="'base.login.login' | translate" [disabled]="!loginform.valid"></button>
+              </div>
+            </div>
+          </div>
+        </p-panel>
+      </form>
+    </div>
+
+</div>

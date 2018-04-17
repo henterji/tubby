@@ -1,0 +1,7 @@
+<baidu-map [options]="opts" (loaded)="loadMap($event)" (clicked)="clickMarker($event)">
+  <marker *ngFor="let marker of markers" [point]="marker.point" [options]="marker.options" (clicked)="showWindow($event)"></marker>
+  <control type="navigation" [options]="controlOpts"></control>
+  <control type="overviewmap" [options]="overviewmapOpts"></control>
+  <control type="scale" [options]="scaleOpts"></control>
+  <control type="maptype" [options]="mapTypeOpts"></control>
+</baidu-map>

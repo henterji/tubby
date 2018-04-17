@@ -1,0 +1,179 @@
+<p-dialog [visible]="true" [responsive]="true" showEffect="fade" width="600" (onHide)="onClose()" [modal]="true">
+
+    <p-header>
+        {{(isNew ? 'btn.add' : 'btn.edit') | translate}} {{'samples.person.detail' | translate}}
+    </p-header>
+
+    <p-growl [(value)]="msgs" sticky="sticky"></p-growl>
+
+    <form [formGroup]="form">
+
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    <span class="required-marker">*</span> {{'samples.person.email' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input [(ngModel)]="data.email" formControlName="email" type="email" size="30" pInputText />
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!form.controls['email'].valid&&form.controls['email'].dirty">
+                        <i class="fa fa-close"></i> {{'text.required' | translate}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    <span class="required-marker">*</span> {{'samples.person.firstName' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input [(ngModel)]="data.firstName" formControlName="firstName" type="text" size="30" pInputText />
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!form.controls['firstName'].valid&&form.controls['firstName'].dirty">
+                        <i class="fa fa-close"></i> {{'text.required' | translate}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    <span class="required-marker">*</span> {{'samples.person.lastName' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input [(ngModel)]="data.lastName" formControlName="lastName" type="text" size="30" pInputText />
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!form.controls['lastName'].valid&&form.controls['lastName'].dirty">
+                        <i class="fa fa-close"></i> {{'text.required' | translate}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    {{'samples.person.telephone' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <p-inputMask [(ngModel)]="data.telephone" mask="99999999999" formControlName="telephone" placeholder="999-9999-9999"></p-inputMask>
+                </div>
+                <div class="ui-grid-col-4">
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    {{'samples.person.gender' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <p-radioButton [(ngModel)]="data.gender" name="gender" formControlName="gender" value="0" [label]="'samples.person.female' | translate"></p-radioButton>
+                    <p-radioButton [(ngModel)]="data.gender" name="gender" formControlName="gender" value="1" [label]="'samples.person.male' | translate"></p-radioButton>
+                    <p-radioButton [(ngModel)]="data.gender" name="gender" formControlName="gender" value="10" [label]="'samples.person.unknown' | translate"></p-radioButton>
+                </div>
+                <div class="ui-grid-col-4">
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    {{'samples.person.birth' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <p-calendar [(ngModel)]="data.birth" formControlName="birth" [dateFormat]="calendarLocale?.dateFormat" [locale]="calendarLocale?.dateLocale"
+                        [showIcon]="true"></p-calendar>
+                </div>
+                <div class="ui-grid-col-4">
+
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    {{'samples.person.age' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <p-spinner [(ngModel)]="data.age" formControlName="age"></p-spinner>
+                </div>
+                <div class="ui-grid-col-4">
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    {{'samples.person.married' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <p-radioButton [(ngModel)]="data.married" name="married" formControlName="married" value="0" [label]="'samples.person.unmarried' | translate"></p-radioButton>
+                    <p-radioButton [(ngModel)]="data.married" name="married" formControlName="married" value="1" [label]="'samples.person.married' | translate"></p-radioButton>
+                </div>
+                <div class="ui-grid-col-4">
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    {{'samples.person.grade' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <p-dropdown  [(ngModel)]="data.grade" [options]="grades | codetable:'--'" formControlName="grade" [autoWidth]="false"></p-dropdown>
+                </div>
+                <div class="ui-grid-col-4">
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    {{'samples.person.intro' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <textarea  [(ngModel)]="data.intro" rows="5" cols="30" formControlName="intro" pInputTextarea></textarea>
+                </div>
+                <div class="ui-grid-col-4">
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    <span *ngIf="isNew" class="required-marker">*</span> {{'samples.person.password' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input  [(ngModel)]="data.password" formControlName="password" type="password" size="30" pPassword #password validateEqual="confirm" [promptLabel]="'text.password-strength.prompt-label' | translate"
+                        [weakLabel]="'text.password-strength.weak-label' | translate" [mediumLabel]="'text.password-strength.medium-label' | translate"
+                        [strongLabel]="'text.password-strength.strong-label' | translate" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!form.controls['password'].valid&&form.controls['password'].dirty">
+                        <i class="fa fa-close"></i> {{'text.required' | translate}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2 text-right">
+                    <span *ngIf="isNew" class="required-marker">*</span> {{'samples.person.confirm' | translate}}:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input formControlName="confirm" type="password" size="30" pPassword #confirm validateEqual="password" [promptLabel]="'text.password-strength.prompt-label' | translate"
+                        [weakLabel]="'text.password-strength.weak-label' | translate" [mediumLabel]="'text.password-strength.medium-label' | translate"
+                        [strongLabel]="'text.password-strength.strong-label' | translate" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!form.controls['confirm'].valid&&form.controls['confirm'].dirty">
+                        <i class="fa fa-close"></i> {{'samples.person.confirm-password-error' | translate}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <p-footer class="ui-helper-clearfix" *ngIf="form">
+        <span class="pull-right">
+                    <button [disabled]="form.invalid || !form.dirty" pButton type="button" (click)="save()" [label]="'btn.save' | translate"></button>
+                    <button pButton type="button" (click)="onClose()" [label]="'btn.cancel' | translate" class="ui-button-secondary"></button>
+      </span>
+    </p-footer>
+
+    {{data | json}}
+</p-dialog>

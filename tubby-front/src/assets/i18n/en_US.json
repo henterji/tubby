@@ -1,0 +1,168 @@
+{
+    "btn": {
+        "ok": "OK",
+        "cancel": "Cancel",
+        "add": "Add",
+        "edit": "Edit",
+        "del": "Del",
+        "batch-add": "Batch Add",
+        "batch-edit": "Batch Edit",
+        "batch-del": "Batch Del",
+        "insert": "Insert",
+        "save": "Save",
+        "update": "Update",
+        "revert": "Revert",
+        "submit": "Submit",
+        "refresh": "Refresh",
+        "search": "Search",
+        "filter": "Filter",
+        "find": "Find",
+        "query": "Query",
+        "export-csv": "Export CSV",
+        "more": "More",
+        "select": "Select",
+        "actions": "Actions",
+        "random": "Random"
+    },
+    "text": {
+        "name": "Name",
+        "title": "Title",
+        "value": "Value",
+        "required": "Required.",
+        "empty-data": "Empty data.",
+        "editable": "Editable",
+        "description": "Description",
+        "confirm": "Confirm",
+        "row-index": "Index",
+        "info": "Information",
+        "alert": "Alert",
+        "error": "Error",
+        "pagination-records": "Current page {{size}} records， Total {{total}} records，",
+        "password-strength": {
+            "prompt-label": "Please enter a password",
+            "weak-label": "Weak",
+            "medium-label": "Medium",
+            "strong-label": "Strong"
+        },
+        "from": "From",
+        "to": "To"
+    },
+    "base": {
+        "title": "Tubby Application",
+        "error-page": {
+            "404": "404: NOT FOUND",
+            "no-permission": "NO PERMISSION"
+        },
+        "user": {
+            "title": "User",
+            "real-name": "Full name",
+            "email": "Email",
+            "password": "Password"
+        },
+        "config": {
+            "name": "Config item name"
+        },
+        "sys-module": {
+            "title": "Module"
+        },
+        "locales": {
+            "name": "Item",
+            "text": "Text"
+        },
+        "themes": {
+            "title": "Themes",
+            "lightness": "Light",
+            "darkness": "Dark"
+        },
+        "welcome": {
+            "title": "Welcome",
+            "description": "Tubby Application",
+            "login": "Login Now",
+            "enter": "Enter Now"
+        },
+        "login": {
+            "title": "User Login",
+            "username": "Username",
+            "password": "Password",
+            "login": "Login"
+        },
+        "logout": "Logout",
+        "update-profile": {
+            "title": "Update Profile",
+            "real-name-min-length": "more than 4 chars.",
+            "password-min-length": "more than 8 chars.",
+            "email-pattern": "error email address."
+        },
+        "change-password": {
+            "title": "Change Password",
+            "current-password": "Current password",
+            "new-password": "New password",
+            "confirm-password": "Confirm password",
+            "password-min-length": "more than 8 chars.",
+            "password-matching": "not matched."
+        },
+        "home": {
+            "title": "Home",
+            "stats-users": "Users"
+        },
+        "users-security": "Users & Security",
+        "depts-mgnt": {
+            "title": "Orgzinations",
+            "": ""
+        },
+        "users-mgnt": {
+            "title": "Users",
+            "": ""
+        },
+        "permissions-mgnt": {
+            "title": "Permissions",
+            "": ""
+        },
+        "logging-monitoring": "Logging & Monitoring",
+        "op-log": {
+            "title": "Operation Logs",
+            "": ""
+        },
+        "task-log": {
+            "title": "Schedule Logs",
+            "": ""
+        },
+        "configurations": "Configurations",
+        "config-mgnt": {
+            "title": "System Config",
+            "": ""
+        },
+        "code-table-mgnt": {
+            "title": "Code Table",
+            "": ""
+        },
+        "locales-mgnt": {
+            "title": "Locales",
+            "dlg-edit": "Edit text"
+        }
+    },
+    "samples": {
+        "person": {
+            "title": "Persons",
+            "detail": "Person detail",       
+            "name": "Name",
+            "firstName": "First name",
+            "lastName": "Last name",
+            "gender": "Gender",
+            "female": "Female",
+            "male": "Male",
+            "unknown": "Unknow",
+            "email": "Email address",
+            "telephone": "Telephone",
+            "age": "Age",
+            "birth": "Birth date",
+            "married": "Married",
+            "unmarried": "Unmarried",
+            "grade": "Education",
+            "intro": "Introduction",
+            "password": "Password",
+            "confirm": "Confirm password",
+            "confirm-password-error": "Input password again"
+        }
+    }
+}

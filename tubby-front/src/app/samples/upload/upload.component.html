@@ -1,0 +1,12 @@
+<h3 class="page-title">上传文件</h3>
+
+<p-growl [value]="msgs"></p-growl>
+
+<p-fileUpload name="demo[]" url="/api/samples/upload" (onUpload)="onUpload($event)" (onBeforeSend)="onBeforeSend($event)" multiple="multiple"
+    accept="image/*" maxFileSize="1000000" chooseLabel="选择文件..." uploadLabel="上传" cancelLabel="取消">
+    <ng-template pTemplate type="content">
+        <ul *ngIf="uploadedFiles.length">
+            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+        </ul>
+    </ng-template>
+    </p-fileUpload>

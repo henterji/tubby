@@ -1,0 +1,88 @@
+<h3 class="page-title">{{'samples.person.title' | translate}}</h3>
+
+<p-dataTable #dt [value]="data?.content" exportFilename="persons" selectionMode="single" [(selection)]="selectedRow" [resizableColumns]="true"
+    [expandableRows]="true" [emptyMessage]="'text.empty-data' | translate" [responsive]="true">
+
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="pull-left">
+            <input type="text" pInputText [(ngModel)]="condition.name" [placeholder]="'samples.person.name' | translate" />
+            <input type="text" pInputText [(ngModel)]="condition.telephone" [placeholder]="'samples.person.telephone' | translate"/>
+            <button type="button" pButton (click)="query()" [label]="'btn.query' | translate"></button>
+            </span>
+            <span class="pull-right">
+                    <button class="ui-button-secondary" type="button" pButton icon="fa-plus"  routerLink="./add-person"  [label]="'btn.add' | translate"></button>
+                    <button class="ui-button-secondary" type="button" pButton icon="fa-file-excel-o" (click)="dt.exportCSV()" [label]="'btn.export-csv' | translate"></button>
+        </span>
+        </div>
+    </p-header>
+
+    <p-column [style]="{width:'32px'}" expander="true" styleClass="col-icon"></p-column>
+
+    <p-column [style]="{'text-align':'left',width:'100px'}" [header]="'samples.person.name' | translate">
+        <ng-template let-row="rowData" pTemplate="body">
+            {{row.firstName}} {{row.lastName}}
+        </ng-template>
+    </p-column>
+
+    <p-column field="email" [style]="{'text-align':'left'}" [header]="'samples.person.email' | translate"></p-column>
+
+    <p-column field="telephone" [style]="{'text-align':'center', width:'120px'}" [header]="'samples.person.telephone' | translate"></p-column>
+
+    <p-column field="gender" [style]="{'text-align':'center', width:'50px'}" [header]="'samples.person.gender' | translate">
+        <ng-template let-row="rowData" pTemplate="body">
+            <i class="fa" [ngClass]="{'fa-male': row.gender === '1', 'fa-female': row.gender === '0'}" title="{{row.gender | codeitem:genders}}"></i>
+        </ng-template>
+    </p-column>
+
+    <p-column field="age" [style]="{'text-align':'right', width:'50px'}" [style]="{'text-align':'right',width:'50px'}" [header]="'samples.person.age' | translate"></p-column>
+
+    <p-column field="birth" [style]="{'text-align':'center', width:'80px'}" [header]="'samples.person.birth' | translate">
+        <ng-template let-row="rowData" pTemplate="body">
+            {{row.birth | date: 'yyyy-MM-dd'}}
+        </ng-template>
+    </p-column>
+
+    <p-column field="married" [style]="{'text-align':'center', width:'80px'}" [header]="'samples.person.married' | translate">
+        <ng-template let-row="rowData" pTemplate="body">
+            {{row.married | codeitem:yesno:'-'}}
+        </ng-template>
+    </p-column>
+
+    <p-column field="grade" [style]="{'text-align':'left'}" [header]="'samples.person.grade' | translate">
+        <ng-template let-row="rowData" pTemplate="body">
+            {{row.grade | codeitem:grades:'-'}}
+        </ng-template>
+    </p-column>
+
+    <ng-template field="intro" let-row pTemplate="rowexpansion">
+        <p class="intro"> {{row.intro || '-'}} </p>
+    </ng-template>
+
+    <p-column [header]="'btn.actions' | translate" [style]="{width:'120px'}" styleClass="actions-column">
+        <ng-template let-row="rowData" pTemplate="body">
+            <a [routerLink]="['./edit-person', row.id]" class="actions-link">{{'btn.edit' | translate}}</a>
+            <a (click)="delete(row)" class="actions-link">{{'btn.del' | translate}}</a>
+        </ng-template>
+    </p-column>
+
+    <p-footer>
+        <div class="ui-helper-clearfix">
+            <span class="pull-left">
+                        {{ 'text.pagination-records' | translate: {size: data?.content.length, total: data?.totalElements} }}
+            </span>
+            <span class="pull-right">
+                <p-paginator *ngIf="data?.totalPages>1" [(rows)]="pageRequest.size"   [pageLinkSize]="5" [rowsPerPageOptions]="[10,15,20,50,100]"
+    [totalRecords]="data?.totalElements" (onPageChange)="paginate($event)"></p-paginator>
+            </span>
+        </div>
+    </p-footer>
+
+    </p-dataTable>
+
+    {{data?.content | json}}
+
+    <p-confirmDialog [header]="'text.info' | translate" icon="fa fa-question-circle" width="425" height="150" [acceptLabel]="'btn.ok' | translate"
+        [rejectLabel]="'btn.cancel' | translate"></p-confirmDialog>
+
+        <router-outlet></router-outlet>

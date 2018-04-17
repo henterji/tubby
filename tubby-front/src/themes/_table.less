@@ -1,0 +1,41 @@
+/* data table */
+.actions-link {
+    color: @actions-link-color !important;
+    .disable {
+        color: @actions-link-disable-color;
+    }
+    :not(:last-of-type) {
+        border-right: 1px solid #aaa;
+    }
+}
+
+
+.actions-column {
+    overflow: visible !important;
+    position: relative;
+    text-align: center;
+}
+
+.actions-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.actions-link.disable {
+    cursor: not-allowed;
+}
+
+.actions-link:not(:last-of-type) {
+    border-right: 1px solid #aaa;
+    padding-right: 5px;
+}
+
+
+/* paginator */
+.paginator-text {
+    padding: 5px 0;
+}
+
+.paginator-buttons .ui-paginator {
+    border: none;
+}

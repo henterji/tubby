@@ -1,0 +1,54 @@
+<h3 class="page-title">
+    持股列表和股票行情</h3>
+
+<p-dataTable #dt [value]="stocks" exportFilename="stocks" selectionMode="single" [(selection)]="selectedStock" (onRowSelect)="onRowSelect($event)"
+    [paginator]="true" [pageLinks]="5" [rowsPerPageOptions]="[5,10,20,50]" [rows]="10" [resizableColumns]="true" [responsive]="true">
+    <p-header>
+        <span>Stock Trading Portfolio</span>
+        <div style="float: right">
+            <strong>Total:</strong>
+            <span class="number">{{totalShares()}}</span>, &nbsp;
+            <span class="number">{{totalValue() | currency:'USD':true:'1.2-3'}}</span>
+        </div>
+    </p-header>
+
+    <p-column field="company" header="Company" [sortable]="true" [filter]="true" filterPlaceholder="筛选"></p-column>
+    <p-column field="ticker" header="Ticker" [sortable]="true" [filter]="true" filterPlaceholder="筛选"></p-column>
+    <p-column field="price" header="Price" [sortable]="true"></p-column>
+    <p-column field="change" header="Change(%)" [sortable]="true">
+        <ng-template let-stock="rowData" pTemplate="body">
+            <span [ngClass]="{'upwards': stock.change > 0, 'downwards': stock.change < 0}">{{stock.change | percent:'1.2-3'}}</span>
+            <i class="fa" [ngClass]="{'fa-arrow-up': stock.change > 0, 'fa-arrow-down': stock.change < 0}"></i>
+        </ng-template>
+    </p-column>
+    <p-column field="shares" header="Shares" [sortable]="true"></p-column>
+    <p-column header="Value">
+        <ng-template let-stock="rowData" pTemplate="body">
+            {{stock.shares * stock.price | currency:'USD':true:'1.2-3'}}
+        </ng-template>
+    </p-column>
+    <p-column>
+        <ng-template let-stock="rowData" pTemplate="body">
+            <button type="button" pButton (click)="showTradeDialog('Buy', stock)" label="Buy"></button>
+            <button type="button" class="ui-button-secondary" pButton (click)="showTradeDialog('Sell', stock)" label="Sell"></button>
+        </ng-template>
+    </p-column>
+    </p-dataTable>
+
+    <p-dialog header="{{trade?.action + ' Stock: ' + selectedStock?.company}}" [(visible)]="displayDialog" [responsive]="true"
+        showEffect="fade" [modal]="true">
+        <div class="ui-grid ui-grid-responsive ui-fluid ui-grid-pad" *ngIf="selectedStock">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-4"><label for="shares">Shares</label></div>
+                <div class="ui-grid-col-8"><input pInputText id="shares" [(ngModel)]="trade.shares" /></div>
+            </div>
+            <div class="ui-grid-row">
+                <span class="help-inline">{{validationError}}</span>
+            </div>
+        </div>
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                <button type="button" pButton icon="fa-check" (click)="executeTrade()" label="{{selectedAction}}"></button>
+            </div>
+        </p-footer>
+        </p-dialog>

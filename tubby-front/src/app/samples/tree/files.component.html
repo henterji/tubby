@@ -1,0 +1,25 @@
+<h3 class="page-title">文件系统</h3>
+
+<div style="margin-bottom: 8px">
+    <button pButton class="ui-button-secondary" type="text" label="全部展开" (click)="expandAll()"></button>
+    <button pButton class="ui-button-secondary" type="text" label="全部收起" (click)="collapseAll()"></button>
+</div>
+
+<div class="ui-g">
+    <div class="ui-g-6">
+
+        <p-tree [value]="nodes" selectionMode="single" [(selection)]="selectedFile" (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)">
+            <ng-template let-node pTemplate="default">
+                <span>
+                    <i *ngIf="node.children && (node.children.length === 0)" [class]="getIcon(node)"></i> 
+                    {{node.label}}</span>
+            </ng-template>
+        </p-tree>
+
+    </div>
+    <div class="ui-g-6">
+
+        {{selectedFile?.label}}
+
+    </div>
+</div>

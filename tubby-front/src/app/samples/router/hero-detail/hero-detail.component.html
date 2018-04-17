@@ -1,0 +1,35 @@
+<div *ngIf="hero" class="hero">
+    <h5>{{hero.name}} details</h5>
+    <form [formGroup]="heroform">
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    id:
+                </div>
+                <div class="ui-grid-col-6">
+                    {{hero.id}}
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    name:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input pInputText type="text" formControlName="name" [(ngModel)]="hero.name" placeholder="name" size="30" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!heroform.controls['name'].valid&&heroform.controls['name'].dirty">
+                        <i class="fa fa-close"></i> Heror name is required
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                </div>
+                <div class="ui-grid-col-6">
+                    <button pButton type="button" (click)="goBack()" label="Back" [disabled]="!heroform.valid"></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
